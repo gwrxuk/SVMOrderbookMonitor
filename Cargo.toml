@@ -1,0 +1,35 @@
+[package]
+name = "solana-orderbook-monitor"
+version = "0.1.0"
+edition = "2021"
+description = "A Solana program to monitor orderbook activity"
+license = "MIT"
+
+[dependencies]
+solana-program = "1.16.5"
+borsh = "0.10.3"
+borsh-derive = "0.10.3"
+thiserror = "1.0.40"
+
+[dev-dependencies]
+solana-client = "1.16.5" 
+solana-sdk = "1.16.5"
+solana-program-test = "1.16.5"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[[example]]
+name = "client"
+path = "controller/client.rs"
+
+[[example]]
+name = "data_explorer"
+path = "controller/data_explorer.rs"
+
+[[example]]
+name = "serum_integration"
+path = "controller/serum_integration.rs"
+
+[features]
+no-entrypoint = []
